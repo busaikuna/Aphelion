@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aphelion</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../icons/iconAphelion.png">
+            <h1>Aphelion</h1>
+        </div>
+        <ul>
+            <li>Feed</li>
+            <li>Notifications</li>
+            <li>Messages</li>
+            <li>Profile</li>
+        </ul>
+        <div class="account">
+            <img src="../icons/accountIcon.png">
+        </div>
+    </header>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="profile">
+                    <div class="profile-image">
+                        <img src="../icons/accountIcon.png">
+                    </div>
+                    <div class="profile-info">
+                        <h2>Busaikuna Inc</h2>
+                        <p>@busai#2704</p>
+                    </div>
+                </div>
+                <div class="new-post">
+                    <img src="../icons/moreIcon.png">
+                    <h1>New Post</h1>
+                </div>
+                <ul class="sidebar-menu">
+                    <li>Notifications</li>
+                    <li>Messages</li>
+                    <li>Settings</li>
+                </ul>
+            </div>
+        </nav>
+        <main class="content">
+            <section class="post-section">
+                <div class="post">
+                    <div class="post-header">
+                        <div class="post-profile">
+                            <div class="post-profile-image"></div>
+                            <div class="post-profile-info">
+                                <h3>Acme Inc</h3>
+                                <p>@acme</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem tempora repellendus maiores molestias aperiam neque dignissimos, nihil assumenda corporis iste iure libero non officia reiciendis, ullam, saepe quis dolores natus.</p>
+                    </div>
+                    <div class="post-actions">
+                        <div class="actions">
+                            <img src="../icons/like.png">
+                            <img src="../icons/comentActive.png">
+                        </div>
+                        <div class="post-time">2h</div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-header">
+                        <div class="post-profile">
+                            <div class="post-profile-image"></div>
+                            <div class="post-profile-info">
+                                <h3>Acme Inc</h3>
+                                <p>@acme</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem tempora repellendus maiores molestias aperiam neque dignissimos, nihil assumenda corporis iste iure libero non officia reiciendis, ullam, saepe quis dolores natus.</p>
+                        <div class="media-content">
+                            <img src="https://th.bing.com/th/id/OIP.XU5VE4CWRgadezp_wRQ42gHaDt?w=317&h=175&c=7&r=0&o=5&pid=1.7">
+                        </div>
+                    </div>
+                    <div class="post-actions">
+                        <div class="actions">
+                            <img src="../icons/like.png">
+                            <img src="../icons/comentActive.png">
+                        </div>
+                        <div class="post-time">2h</div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-header">
+                        <div class="post-profile">
+                            <div class="post-profile-image"></div>
+                            <div class="post-profile-info">
+                                <h3>Acme Inc</h3>
+                                <p>@acme</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem tempora repellendus maiores molestias aperiam neque dignissimos, nihil assumenda corporis iste iure libero non officia reiciendis, ullam, saepe quis dolores natus.</p>
+                        <div class="media-content">
+                            <pre>
+                                <code>
+                                    const root = document.documentElement;
+                                    const theme = document.querySelector(".theme");
+                                    let themeLS = localStorage.getItem("theme");
+                                    
+                                    window.addEventListener("resize", changeTheme);
+                                    
+                                    if (!themeLS) {
+                                        localStorage.setItem("theme", "dark");
+                                        themeLS = "dark";
+                                    }
+                                    
+                                    changeTheme();
+                                    
+                                    theme.addEventListener("click", () => {
+                                        themeLS = localStorage.getItem("theme");
+                                        if (themeLS === "dark") {
+                                            localStorage.setItem("theme", "light");
+                                        } else {
+                                            localStorage.setItem("theme", "dark");
+                                        }
+                                        themeLS = localStorage.getItem("theme");
+                                        changeTheme();
+                                    });
+                                    
+                                    function changeTheme() {
+                                        if (themeLS) {
+                                            if (themeLS === "dark") {
+                                                root.style.setProperty("--dark", "#101010");
+                                                root.style.setProperty("--light-dark", "#646464");
+                                                root.style.setProperty("--light", "#B2BEBF");
+                                                document.querySelector(".input").style.color = "var(--light)";
+                                                root.style.setProperty("--dark-light", "#3B3936");
+                                                root.style.setProperty("--logo", "#DEE0DC");
+                                                theme.style.filter = "brightness(10) grayscale()";
+                                            } else if (themeLS === "light") {
+                                                root.style.setProperty("--dark", "#fff");
+                                                root.style.setProperty("--light-dark", "#000");
+                                                root.style.setProperty("--light", "#000");
+                                                document.querySelector(".input").style.color = "#fff";
+                                                root.style.setProperty("--dark-light", "#dee0dc");
+                                                root.style.setProperty("--logo", "#1d1d31");
+                                                if (window.innerWidth < 750) {
+                                                    theme.style.filter = "brightness(0) grayscale(100%)"; // Ícone branco em telas pequenas swdjfowebfeojjfbrofbeofboubofbrofborfiberoifbeofrbeofire
+                                                } else {
+                                                    theme.style.filter = "brightness(10) grayscale()"; // Ícone preto em telas grandes
+                                                }
+                                            }
+                                        }
+                                    }
+                                    
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="post-actions">
+                        <div class="actions">
+                            <img src="../icons/like.png">
+                            <img src="../icons/comentActive.png">
+                        </div>
+                        <div class="post-time">2h</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
