@@ -55,3 +55,7 @@ body {
 .header ul li:hover {
     color: var(--sidebar-text-color);
 }
+a{
+    color: var(--text-color);
+    text-decoration: none;
+}

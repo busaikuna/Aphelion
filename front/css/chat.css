@@ -190,3 +190,10 @@ header ul li:hover {
     color: #fff;
   }
   
+  a{
+    color: var(--sidebar-text-color);
+    text-decoration: none;
+  }
+  a:hover{
+    color: #333;
+  }
